@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/mainScreenFragment">
+
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.example.marketapplication.view.main.MainScreenFragment"
+        android:label="mainScreenFragment"
+        tools:layout="@layout/fragment_main_screen" />
+
+    <fragment
+        android:id="@+id/adsFragment"
+        android:name="com.example.marketapplication.view.main.AdsFragment"
+        android:label="adsFragment"
+        tools:layout="@layout/fragment_ads" />
+
+    <fragment
+        android:id="@+id/favoriteAdsFragment"
+        android:name="com.example.marketapplication.view.main.FavoriteAdsFragment"
+        android:label="favoriteAdsFragment"
+        tools:layout="@layout/fragment_favorite_ads" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.marketapplication.view.main.SettingsFragment"
+        android:label="settingsFragment"
+        tools:layout="@layout/fragment_settings" />
+
+</navigation>

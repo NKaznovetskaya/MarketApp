@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">MarketApplication</string>
+    <string name="sign_in">Вхід</string>
+    <string name="number">+38</string>
+    <string name="verification">Верифікувати</string>
+    <string name="next">Далі</string>
+    <string name="first_name">Ім\'я</string>
+    <string name="last_name">Прізвище</string>
+    <string name="city">Місто</string>
+    <string name="done">Готово</string>
+    <string name="foot_size">Розміри стопи:</string>
+    <string name="material">Матеріал:</string>
+    <string name="size">EU</string>
+    <string name="long_size">Довжина/см</string>
+    <string name="width_size">Ширина/см</string>
+
+
+</resources>

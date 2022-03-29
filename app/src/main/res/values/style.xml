@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="CustomTextInputLayout" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeColor">@color/grey_border</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="prefixTextColor">@color/white</item>
+    </style>
+
+    <style name="BottomNavigation">
+        <item name="android:background">@color/grey_navigation_bar</item>
+        <item name="itemBackground">@color/grey_navigation_bar</item>
+        <item name="itemIconTint">@color/navigation_icon_color</item>
+    </style>
+
+</resources>

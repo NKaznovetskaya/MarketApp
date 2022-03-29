@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.marketapplication.view.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+
+        <action
+            android:id="@+id/to_loginFragment"
+            app:destination="@id/loginFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.marketapplication.view.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+
+        <action
+            android:id="@+id/to_verificationFragment"
+            app:destination="@id/verificationFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/verificationFragment"
+        android:name="com.example.marketapplication.view.login.VerificationFragment"
+        android:label="fragment_verification"
+        tools:layout="@layout/fragment_verification" >
+
+        <action
+            android:id="@+id/to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.example.marketapplication.view.login.PasswordFragment"
+        android:label="fragment_password"
+        tools:layout="@layout/fragment_password" >
+
+        <action
+            android:id="@+id/to_dataFragment"
+            app:destination="@id/dataFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/dataFragment"
+        android:name="com.example.marketapplication.view.login.DataFragment"
+        android:label="fragment_data"
+        tools:layout="@layout/fragment_data"/>
+
+</navigation>
