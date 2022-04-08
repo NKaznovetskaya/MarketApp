@@ -13,6 +13,17 @@
     <string name="size">EU</string>
     <string name="long_size">Довжина/см</string>
     <string name="width_size">Ширина/см</string>
+    <string name="contact_number">Контактний номер</string>
+    <string name="exit">Вийти</string>
+    <string name="sales_manager">Продавець</string>
+    <string name="add_photo">Додати фото</string>
+    <string name="save">Зберегти</string>
+    <string name="model">Модель</string>
+    <string name="description">Опис</string>
+    <string name="price">Ціна</string>
+    <string name="error_hint">Додайте хоча б одне фото </string>
+
+
 
 
 </resources>

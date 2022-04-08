@@ -7,26 +7,25 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
 import androidx.fragment.app.Fragment
 import com.example.marketapplication.R
+import com.example.marketapplication.databinding.FragmentVerificationBinding
+import com.example.marketapplication.view.base.BaseFragment
 
 
-class VerificationFragment : Fragment() {
+class VerificationFragment : BaseFragment<FragmentVerificationBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_verification, container, false)
-    }
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentVerificationBinding
+        get() = FragmentVerificationBinding::inflate
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val btnVerification = requireActivity().findViewById<AppCompatButton>(R.id.btnVerification)
-        btnVerification.setOnClickListener {
+        binding.btnVerification.setOnClickListener {
             (requireActivity() as LoginActivity).navigate(VerificationFragmentDirections.toPasswordFragment())
         }
 
     }
+
 
 
 }

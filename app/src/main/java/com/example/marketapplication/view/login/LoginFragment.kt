@@ -7,13 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.marketapplication.R
+import com.example.marketapplication.databinding.FragmentLoginBinding
+import com.example.marketapplication.view.base.BaseFragment
 
 
-class LoginFragment : Fragment()  {
+class LoginFragment : BaseFragment<FragmentLoginBinding>()  {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
-    }
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentLoginBinding
+        get() = FragmentLoginBinding::inflate
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

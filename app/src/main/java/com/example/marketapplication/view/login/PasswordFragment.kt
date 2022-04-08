@@ -7,15 +7,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
 import com.example.marketapplication.R
+import com.example.marketapplication.databinding.FragmentPasswordBinding
+import com.example.marketapplication.view.base.BaseFragment
 
-class PasswordFragment : Fragment() {
+class PasswordFragment : BaseFragment<FragmentPasswordBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_password, container, false)
-    }
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentPasswordBinding
+        get() = FragmentPasswordBinding::inflate
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

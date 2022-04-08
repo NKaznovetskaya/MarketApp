@@ -58,13 +58,13 @@
                 app:layout_constraintStart_toStartOf="@id/tvNameSneakers"
                 app:layout_constraintTop_toBottomOf="@id/tvNameSneakers" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imgLike"
-                android:layout_width="24dp"
-                android:layout_height="22dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/ic_favorite_ads_white"
+                android:src="@drawable/ic_favorite_ads_red"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

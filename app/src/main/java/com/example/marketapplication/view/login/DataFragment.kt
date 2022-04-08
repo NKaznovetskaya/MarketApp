@@ -8,16 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import com.example.marketapplication.R
-import com.example.marketapplication.view.main.MainActivity
+import com.example.marketapplication.databinding.FragmentDataBinding
+import com.example.marketapplication.view.base.BaseFragment
+import com.example.marketapplication.view.main.bottomnav.MainActivity
 
-class DataFragment : Fragment() {
+class DataFragment : BaseFragment<FragmentDataBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_data, container, false)
-    }
+    override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentDataBinding
+        get() = FragmentDataBinding::inflate
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val btnDone = requireActivity().findViewById<Button>(R.id.btnDone)
@@ -27,6 +25,7 @@ class DataFragment : Fragment() {
         }
         super.onViewCreated(view, savedInstanceState)
     }
+
 
 }
 
