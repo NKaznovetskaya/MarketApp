@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavDirections
+import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import java.lang.IllegalStateException
 
@@ -31,6 +33,13 @@ abstract class BaseFragment<B : ViewBinding>: Fragment() {
     override fun onDestroyView() {
         mBinding = null
         super.onDestroyView()
+    }
+
+
+    fun navigate(destination: NavDirections) {
+        parentFragment?.findNavController()?.currentDestination?.getAction(destination.actionId)?.let { action ->
+            parentFragment?.findNavController()?.navigate(action.destinationId)
+        }
     }
 
 

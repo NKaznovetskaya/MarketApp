@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/mainNavFragment">
+
+
+    <fragment
+        android:id="@+id/mainNavFragment"
+        android:name="com.example.marketapplication.view.main.MainNavFragment"
+        android:label="MainNavFragment"
+        tools:layout="@layout/fragment_main_nav">
+
+        <action
+            android:id="@+id/to_description_sneakers_fragment"
+            app:destination="@id/descriptionSneakersFragment" />
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/descriptionSneakersFragment"
+        android:name="com.example.marketapplication.view.main.sneakers.DescriptionSneakersFragment"
+        android:label="descriptionFragment"
+        tools:layout="@layout/fragment_description_sneakers" >
+
+        <argument
+            android:name="removeIsPossible"
+            app:argType="boolean"
+            android:defaultValue="false"/>
+
+    </fragment>
+
+</navigation>

@@ -23,5 +23,7 @@
     <color name="red_favorite_ads">#E60C0C</color>
     <color name="grey_material">#9A9A9A</color>
     <color name="grey_line">#ABB4BD</color>
+    <color name="grey_bottom_filter">#4E4E53</color>
+    <color name="tab_layout_border">#4B4B4B</color>
 
 </resources>

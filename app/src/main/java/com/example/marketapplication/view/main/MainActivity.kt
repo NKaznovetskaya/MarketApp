@@ -1,4 +1,4 @@
-package com.example.marketapplication.view.main.bottomnav
+package com.example.marketapplication.view.main
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -20,10 +20,6 @@ class MainActivity: AppCompatActivity() {
 
         navController = Navigation.findNavController(this, R.id.nav_main_host_fragment)
 
-        val navController = Navigation.findNavController(this, R.id.nav_main_host_fragment)
-        val bottomNavigationView =
-            findViewById<BottomNavigationView>(R.id.nav_view)
-        setupWithNavController(bottomNavigationView, navController)
     }
 
     fun navigate(destination: NavDirections) {

@@ -21,9 +21,15 @@
     <string name="model">Модель</string>
     <string name="description">Опис</string>
     <string name="price">Ціна</string>
-    <string name="error_hint">Додайте хоча б одне фото </string>
-
-
+    <string name="validation_error">Додайте хоча б одне фото </string>
+    <string name="throw_off">Скинути</string>
+    <string name="apply">Застосувати</string>
+    <string name="active">Активні</string>
+    <string name="archive">Архів</string>
+    <string name="delete_ads">Видалити оголошення</string>
+    <string name="dialog_title">Ви впевнені, що хочете видалити?</string>
+    <string name="no">Ні</string>
+    <string name="yes">Так</string>
 
 
 </resources>

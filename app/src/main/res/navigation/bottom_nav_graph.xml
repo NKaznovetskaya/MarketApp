@@ -2,38 +2,26 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_graph"
+    android:id="@+id/bottom_nav_graph"
     app:startDestination="@id/sneakersFragment">
 
     <fragment
         android:id="@+id/sneakersFragment"
         android:name="com.example.marketapplication.view.main.bottomnav.SneakersFragment"
         android:label="sneakersFragment"
-        tools:layout="@layout/fragment_sneakers">
-
-        <action
-            android:id="@+id/to_description_sneakers_fragment"
-            app:destination="@id/descriptionSneakersFragment" />
-
-    </fragment>
+        tools:layout="@layout/fragment_sneakers"/>
 
     <fragment
         android:id="@+id/adsFragment"
         android:name="com.example.marketapplication.view.main.bottomnav.AdsFragment"
         android:label="adsFragment"
-        tools:layout="@layout/fragment_ads" />
+        tools:layout="@layout/fragment_ads"/>
 
     <fragment
         android:id="@+id/favoriteAdsFragment"
         android:name="com.example.marketapplication.view.main.bottomnav.FavoriteAdsFragment"
         android:label="favoriteAdsFragment"
         tools:layout="@layout/fragment_favorite_ads" />
-
-    <fragment
-        android:id="@+id/descriptionSneakersFragment"
-        android:name="com.example.marketapplication.view.main.sneakers.DescriptionSneakersFragment"
-        android:label="descriptionFragment"
-        tools:layout="@layout/fragment_description_sneakers" />
 
     <fragment
         android:id="@+id/settingsFragment"

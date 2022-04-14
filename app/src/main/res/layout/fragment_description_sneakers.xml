@@ -7,6 +7,11 @@
     android:background="@color/bg_main"
     tools:context=".view.main.sneakers.DescriptionSneakersFragment">
 
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clSellerData"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/cvDescription">
 
     <ImageView
         android:id="@+id/imgRhombus"
@@ -53,6 +58,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvSalesManager" />
 
+</androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -72,6 +79,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cvDescription"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="100dp"
@@ -97,7 +105,7 @@
                     android:layout_width="74dp"
                     android:layout_height="30dp"
                     android:layout_marginStart="16dp"
-                    android:layout_marginTop="320dp"
+                    android:layout_marginTop="270dp"
                     android:background="@drawable/tv_price_yellow"
                     android:elevation="8dp"
                     android:gravity="center"
@@ -252,6 +260,22 @@
 
         </androidx.core.widget.NestedScrollView>
     </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnDeleteAds"
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:textAllCaps="false"
+        android:text="@string/delete_ads"
+        android:background="@drawable/bg_button"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:layout_marginBottom="42dp"
+        android:layout_marginStart="46dp"
+        android:layout_marginEnd="46dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

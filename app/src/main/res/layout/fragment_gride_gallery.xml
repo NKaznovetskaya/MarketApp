@@ -382,7 +382,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/error_hint"
+            android:text="@string/validation_error"
             android:textColor="@color/red_field_error"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tilPrice"
