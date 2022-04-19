@@ -40,6 +40,7 @@ class SneakersFragment: BaseFragment<FragmentSneakersBinding>() {
             (requireActivity() as MainActivity).navigate(MainNavFragmentDirections.toDescriptionSneakersFragment(false))
         }
 
+
         binding.imgFilter.setOnClickListener{
             showBottomSheetDialog()
         }

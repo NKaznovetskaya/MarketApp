@@ -8,7 +8,7 @@
     tools:context=".view.login.DataFragment">
 
 
-    <TextView
+    <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -22,7 +22,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.App.ButtonStyle"
         android:id="@+id/btnDone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,41 +31,40 @@
         android:layout_marginBottom="68dp"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="46dp"
+        android:textAllCaps="false"
         android:text="@string/done"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         />
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/CustomTextInputLayout"
         android:id="@+id/tilFirstName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="46dp"
-        app:prefixText="@string/first_name"
-        style="@style/CustomTextInputLayout"
+        android:hint="@string/first_name"
         app:layout_constraintTop_toBottomOf="@id/tvSignIn"
         >
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etFirstName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:text="Anastasiia"
-            />
+            android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/CustomTextInputLayout"
         android:id="@+id/tilLastName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="46dp"
-        app:prefixText="@string/last_name"
-        style="@style/CustomTextInputLayout"
+        android:hint="@string/last_name"
         app:layout_constraintTop_toBottomOf="@id/tilFirstName"
         >
         <androidx.appcompat.widget.AppCompatEditText
@@ -72,20 +72,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="Ghjjvjb"
             />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/CustomTextInputLayout"
         android:id="@+id/tilCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginStart="46dp"
         android:layout_marginEnd="46dp"
-        app:prefixText="@string/city"
-        style="@style/CustomTextInputLayout"
+        android:hint="@string/city"
         app:layout_constraintTop_toBottomOf="@id/tilLastName"
         >
         <androidx.appcompat.widget.AppCompatEditText
@@ -93,7 +92,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
-            android:text="Vinnytsa"
             />
 
     </com.google.android.material.textfield.TextInputLayout>

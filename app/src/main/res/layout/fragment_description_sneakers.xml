@@ -261,7 +261,8 @@
         </androidx.core.widget.NestedScrollView>
     </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.App.ButtonStyle"
         android:id="@+id/btnDeleteAds"
         android:layout_width="match_parent"
         android:layout_height="34dp"

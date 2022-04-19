@@ -9,12 +9,37 @@
         <item name="boxCornerRadiusTopEnd">20dp</item>
         <item name="boxCornerRadiusTopStart">20dp</item>
         <item name="prefixTextColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="errorTextColor">@color/red_field_error</item>
     </style>
 
     <style name="BottomNavigation">
         <item name="android:background">@color/grey_navigation_bar</item>
         <item name="itemBackground">@color/grey_navigation_bar</item>
         <item name="itemIconTint">@color/navigation_icon_color</item>
+    </style>
+
+    <style name="Widget.App.ButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@null</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:padding">1dp</item>
+    </style>
+
+    <style name="Widget.App.TabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/Widget.App.TextAppearance</item>
+    </style>
+
+    <style name="Widget.App.TextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <style name="Widget.App.TextInputAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="Widget.App.TextInputLayout" parent="@style/Widget.Design.TextInputLayout">
+        <item name="prefixTextAppearance">@style/Widget.App.TextInputAppearance</item>
     </style>
 
 </resources>
