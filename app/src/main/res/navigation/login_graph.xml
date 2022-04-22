@@ -40,6 +40,7 @@
             app:destination="@id/passwordFragment" />
 
     </fragment>
+
     <fragment
         android:id="@+id/passwordFragment"
         android:name="com.example.marketapplication.view.login.PasswordFragment"
@@ -50,11 +51,23 @@
             android:id="@+id/to_dataFragment"
             app:destination="@id/dataFragment" />
 
+        <argument
+            android:name="phone"
+            app:argType="string" />
+
     </fragment>
+
     <fragment
         android:id="@+id/dataFragment"
         android:name="com.example.marketapplication.view.login.DataFragment"
         android:label="fragment_data"
-        tools:layout="@layout/fragment_data"/>
+        tools:layout="@layout/fragment_data">
+        <argument
+            android:name="phone"
+            app:argType="string" />
+        <argument
+            android:name="password"
+            app:argType="string" />
+    </fragment>
 
 </navigation>

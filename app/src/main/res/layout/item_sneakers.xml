@@ -80,7 +80,7 @@
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@id/imgSneakers"
-                app:layout_constraintTop_toBottomOf="@id/tvSizeTitle" />
+                app:layout_constraintTop_toBottomOf="@id/tvSizeType" />
 
             <TextView
                 android:id="@+id/tvNameMaterial"
@@ -105,7 +105,7 @@
                 tools:text="40" />
 
             <TextView
-                android:id="@+id/tvSizeTitle"
+                android:id="@+id/tvSizeType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
@@ -125,17 +125,17 @@
                 android:textColor="@color/white"
                 android:textSize="10sp"
                 app:layout_constraintStart_toEndOf="@id/tvSize"
-                app:layout_constraintTop_toTopOf="@id/tvSizeTitle" />
+                app:layout_constraintTop_toTopOf="@id/tvSizeType" />
 
             <TextView
-                android:id="@+id/tvLong"
+                android:id="@+id/tvLength"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="@string/long_size"
                 android:textColor="@color/white"
                 android:textSize="14sp"
-                app:layout_constraintBottom_toTopOf="@id/tvSizeTitle"
+                app:layout_constraintBottom_toTopOf="@id/tvSizeType"
                 app:layout_constraintEnd_toEndOf="@id/tvLongTitle"
                 app:layout_constraintStart_toStartOf="@id/tvLongTitle"
                 tools:text="28.5" />
@@ -149,7 +149,7 @@
                 android:textColor="@color/white"
                 android:textSize="10sp"
                 app:layout_constraintStart_toEndOf="@id/tvLongTitle"
-                app:layout_constraintTop_toTopOf="@id/tvSizeTitle" />
+                app:layout_constraintTop_toTopOf="@id/tvSizeType" />
 
             <TextView
                 android:id="@+id/tvWidth"

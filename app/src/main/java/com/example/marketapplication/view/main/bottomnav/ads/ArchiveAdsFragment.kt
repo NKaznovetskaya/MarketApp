@@ -19,7 +19,6 @@ class ArchiveAdsFragment : BaseFragment<FragmentArchiveAdsBinding>() {
 
         val sneakersAdapter = SneakersAdapter()
         binding.rvSneakers.adapter = sneakersAdapter
-        sneakersAdapter.setItems(ObjectsGeneratorUtils.sneakersList())
     }
 
 }

@@ -75,11 +75,10 @@
         android:layout_marginTop="180dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tilCitySitting"
+        app:layout_constraintBottom_toTopOf="@id/tilCity"
         app:layout_constraintTop_toTopOf="parent"
         android:textColorHint="@color/white"
         android:hint="@string/contact_number"
-        app:prefixText="@string/number"
         app:prefixTextColor="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -97,7 +96,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tilCitySitting"
+        android:id="@+id/tilCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/Widget.Design.TextInputLayout"
@@ -112,7 +111,7 @@
         android:textColorHint="@color/white">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiEtCitySitting"
+            android:id="@+id/tiEtCity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Vinnytsia"

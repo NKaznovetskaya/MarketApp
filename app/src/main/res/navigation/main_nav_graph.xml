@@ -15,6 +15,10 @@
         <action
             android:id="@+id/to_description_sneakers_fragment"
             app:destination="@id/descriptionSneakersFragment" />
+        <action
+            android:id="@+id/to_new_sneakers_fragment"
+            app:destination="@id/newSneakersFragment" />
+
 
     </fragment>
 
@@ -31,5 +35,11 @@
             android:defaultValue="false"/>
 
     </fragment>
+
+    <fragment
+        android:id="@+id/newSneakersFragment"
+        android:name="com.example.marketapplication.view.main.bottomnav.NewSneakersFragment"
+        android:label="NewSneakersFragment"
+        tools:layout="@layout/fragment_new_sneakers"/>
 
 </navigation>

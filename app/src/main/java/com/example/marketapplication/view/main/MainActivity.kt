@@ -24,9 +24,8 @@ class MainActivity: AppCompatActivity() {
 
     fun navigate(destination: NavDirections) {
         navController.currentDestination?.getAction(destination.actionId)?.let { action ->
-            navController.navigate(action.destinationId)
+            navController.navigate(action.destinationId, destination.arguments)
         }
     }
-
 
 }

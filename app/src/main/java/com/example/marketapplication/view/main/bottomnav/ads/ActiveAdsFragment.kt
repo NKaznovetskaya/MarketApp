@@ -21,7 +21,6 @@ class ActiveAdsFragment : BaseFragment<FragmentActiveAdsBinding>() {
         super.onViewCreated(view, savedInstanceState)
         val sneakersAdapter = SneakersAdapter()
         binding.rvSneakers.adapter = sneakersAdapter
-        sneakersAdapter.setItems(ObjectsGeneratorUtils.sneakersList())
 
         sneakersAdapter.itemClickListener = {
             (requireActivity() as MainActivity).navigate(MainNavFragmentDirections.toDescriptionSneakersFragment(true))

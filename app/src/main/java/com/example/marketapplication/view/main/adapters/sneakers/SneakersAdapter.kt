@@ -3,16 +3,16 @@ package com.example.marketapplication.view.main.adapters.sneakers
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.ListAdapter
 import com.example.marketapplication.R
-import com.example.marketapplication.domain.model.SneakersItem
+import com.example.marketapplication.domain.model.Sneakers
 
-class SneakersAdapter : RecyclerView.Adapter<SneakersViewHolder>() {
+class SneakersAdapter : ListAdapter<Sneakers, SneakersViewHolder>(SneakersDiffUtil()) {
 
-    private var items = mutableListOf<SneakersItem>()
+    private var items = mutableListOf<Sneakers>()
     var itemClickListener: (() -> (Unit))? = null
 
-    fun setItems(itemsList: List<SneakersItem>) {
+    fun setItems(itemsList: List<Sneakers>) {
         items.addAll(itemsList)
         notifyDataSetChanged()
     }
@@ -29,7 +29,7 @@ class SneakersAdapter : RecyclerView.Adapter<SneakersViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: SneakersViewHolder, position: Int) {
-        val item = items[position]
+        val item = items[holder.adapterPosition]
         holder.bind(item)
         holder.itemClickListener = itemClickListener
     }

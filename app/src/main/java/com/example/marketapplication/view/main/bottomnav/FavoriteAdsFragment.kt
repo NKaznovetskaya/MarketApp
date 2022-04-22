@@ -19,7 +19,6 @@ class FavoriteAdsFragment : BaseFragment<FragmentFavoriteAdsBinding>() {
 
         val sneakersAdapter = SneakersAdapter()
         binding.rvSneakers.adapter = sneakersAdapter
-        sneakersAdapter.setItems(ObjectsGeneratorUtils.sneakersList(true))
     }
 
 }

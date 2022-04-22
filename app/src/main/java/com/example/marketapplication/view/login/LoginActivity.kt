@@ -6,6 +6,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation
 import com.example.marketapplication.R
+import com.google.firebase.FirebaseApp
 
 
 class LoginActivity: AppCompatActivity() {
@@ -22,7 +23,7 @@ class LoginActivity: AppCompatActivity() {
 
     fun navigate(destination: NavDirections) {
         navController.currentDestination?.getAction(destination.actionId)?.let { action ->
-            navController.navigate(action.destinationId)
+            navController.navigate(action.destinationId, destination.arguments)
         }
     }
 

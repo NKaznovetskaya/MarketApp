@@ -1,13 +1,11 @@
 package com.example.marketapplication.view.main
 
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.marketapplication.R
 import com.example.marketapplication.databinding.FragmentMainNavBinding
@@ -24,6 +22,14 @@ class MainNavFragment: BaseFragment<FragmentMainNavBinding>() {
 
         val navBottomHostFragment = childFragmentManager.findFragmentById(R.id.nav_bottom_host_fragment) as NavHostFragment
         binding.navView.setupWithNavController(navBottomHostFragment.navController)
+
+
+
+        binding.imgNewSneakers.setOnClickListener {
+          val newSneakers = binding.imgNewSneakers
+            (requireActivity() as MainActivity).navigate(MainNavFragmentDirections.toNewSneakersFragment())
+
+        }
     }
 
 }

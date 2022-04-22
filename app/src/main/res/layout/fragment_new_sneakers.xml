@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bg_main"
-        tools:context=".view.main.adapters.gallery.NewSneakersFragment">
+        tools:context=".view.main.bottomnav.NewSneakersFragment">
 
         <TextView
             android:id="@+id/tvSave"
@@ -212,7 +212,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tvWidthTitle" />
 
             <TextView
-                android:id="@+id/tvSizeTitle"
+                android:id="@+id/tvSizeType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -236,7 +236,7 @@
                 app:layout_constraintStart_toEndOf="@id/tvSizeSneakers" />
 
             <TextView
-                android:id="@+id/tvSizeLong"
+                android:id="@+id/tvSizeLength"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
@@ -280,12 +280,11 @@
                 android:id="@+id/tiEtModel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     "
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:focusable="false"
+                android:focusable="true"
                 android:clickable="true"
-                android:cursorVisible="false"
+                android:cursorVisible="true"
                 android:backgroundTint="@color/grey_line" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -309,12 +308,11 @@
                 android:id="@+id/tiEtMaterial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     "
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:focusable="false"
+                android:focusable="true"
                 android:clickable="true"
-                android:cursorVisible="false"
+                android:cursorVisible="true"
                 android:backgroundTint="@color/grey_line" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -338,12 +336,11 @@
                 android:id="@+id/tiEtDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="     "
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:focusable="false"
+                android:focusable="true"
                 android:clickable="true"
-                android:cursorVisible="false"
+                android:cursorVisible="true"
                 android:backgroundTint="@color/grey_line" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -367,12 +364,11 @@
                 android:id="@+id/tiEtPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" "
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                android:focusable="false"
+                android:focusable="true"
                 android:clickable="true"
-                android:cursorVisible="false"
+                android:cursorVisible="true"
                 android:backgroundTint="@color/grey_line" />
 
         </com.google.android.material.textfield.TextInputLayout>

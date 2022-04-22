@@ -15,6 +15,7 @@
         app:layout_constraintBottom_toTopOf="@id/nav_view"
         app:layout_constraintTop_toTopOf="parent"/>
 
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         style="@style/BottomNavigation"
         android:id="@+id/nav_view"
@@ -24,5 +25,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgNewSneakers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_center_button_bg"
+        android:src="@drawable/ic_plus"
+        android:scaleType="centerInside"
+        android:paddingBottom="16dp"
+        android:paddingEnd="2dp"
+        android:elevation="12dp"
+        android:layout_marginBottom="-14dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/nav_view"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
