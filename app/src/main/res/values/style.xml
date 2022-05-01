@@ -13,6 +13,11 @@
         <item name="errorTextColor">@color/red_field_error</item>
     </style>
 
+    <style name="Widget.App.SpinnerTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu">
+        <item name="endIconMode">none</item>
+        <item name="boxStrokeColor">@color/grey_border</item>
+    </style>
+
     <style name="BottomNavigation">
         <item name="android:background">@color/grey_navigation_bar</item>
         <item name="itemBackground">@color/grey_navigation_bar</item>

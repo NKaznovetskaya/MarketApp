@@ -180,7 +180,7 @@
                     app:layout_constraintTop_toBottomOf="@id/tvSize" />
 
                 <TextView
-                    android:id="@+id/tvLong"
+                    android:id="@+id/tvLength"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="60dp"
@@ -192,7 +192,7 @@
                     android:text="28.5" />
 
                 <TextView
-                    android:id="@+id/tvLongTitle"
+                    android:id="@+id/tvLengthTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="50dp"
@@ -202,7 +202,7 @@
                     android:textColor="@color/white"
                     android:textSize="10sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tvLong" />
+                    app:layout_constraintTop_toBottomOf="@id/tvLength" />
 
                 <TextView
                     android:id="@+id/tvWidth"
@@ -213,7 +213,7 @@
                     android:textColor="@color/white"
                     android:textSize="14sp"
                     app:layout_constraintBottom_toTopOf="@id/tvSizeTitle"
-                    app:layout_constraintStart_toEndOf="@id/tvLong"
+                    app:layout_constraintStart_toEndOf="@id/tvLength"
                     android:text="10" />
 
                 <TextView
@@ -225,7 +225,7 @@
                     android:text="@string/width_size"
                     android:textColor="@color/white"
                     android:textSize="10sp"
-                    app:layout_constraintStart_toEndOf="@id/tvLongTitle"
+                    app:layout_constraintStart_toEndOf="@id/tvLengthTitle"
                     app:layout_constraintTop_toBottomOf="@id/tvWidth" />
 
                 <TextView

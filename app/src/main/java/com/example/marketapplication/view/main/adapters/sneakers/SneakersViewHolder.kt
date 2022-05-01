@@ -9,7 +9,8 @@ import com.example.marketapplication.domain.model.Sneakers
 
 class SneakersViewHolder(view: View): RecyclerView.ViewHolder(view) {
 
-    var itemClickListener: (() -> (Unit))? = null
+    var itemClickListener: ((Sneakers) -> (Unit))? = null
+    var likeClickListener: ((Boolean) -> (Unit))? = null
 
     val imgSneakers: ImageView = view.findViewById(R.id.imgSneakers)
     val imgLike: ImageView = view.findViewById(R.id.imgLike)
@@ -38,7 +39,10 @@ class SneakersViewHolder(view: View): RecyclerView.ViewHolder(view) {
         imgLike.setImageResource(likeDrawable)
 
         itemView.setOnClickListener {
-            itemClickListener?.invoke()
+            itemClickListener?.invoke(sneakersItem)
+        }
+        imgLike.setOnClickListener {
+            likeClickListener?.invoke(!sneakersItem.isFavorite)
         }
     }
 }

@@ -46,6 +46,8 @@
         android:layout_marginStart="46dp"
         android:layout_marginEnd="46dp"
         android:hint="@string/first_name"
+        app:errorEnabled="true"
+        app:errorTextColor="@color/red_field_error"
         app:layout_constraintTop_toBottomOf="@id/tvSignIn"
         >
         <androidx.appcompat.widget.AppCompatEditText

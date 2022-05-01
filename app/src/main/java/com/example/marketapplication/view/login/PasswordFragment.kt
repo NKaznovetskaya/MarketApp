@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.marketapplication.databinding.FragmentPasswordBinding
 import com.example.marketapplication.domain.storage.StoragePreference
+import com.example.marketapplication.utils.ValidationUtils
 import com.example.marketapplication.view.base.BaseFragment
 import com.example.marketapplication.view.main.MainActivity
 import com.google.firebase.FirebaseApp
@@ -44,36 +45,44 @@ class PasswordFragment : BaseFragment<FragmentPasswordBinding>() {
             }
 
 
-         binding.btnNext.setOnClickListener {
-             val password = binding.etPassword.text.toString()
-             var isUserRegistered = false
-             if (usersList != null) {
-                 for (user in usersList!!) {
-                     val userData = user.data
-                     val userPhone = userData?.get("phone") as String
-                     val userPassword = userData["password"] as String
+        binding.btnNext.setOnClickListener {
 
-                     if (userPassword == password && userPhone == phone) {
-                         isUserRegistered = true
+            val isPasswordValid = ValidationUtils.validation(
+                textInputLayout = binding.tilPassword,
+                editText = binding.etPassword
+            )
+            if (isPasswordValid) {
+                val password = binding.etPassword.text.toString()
+                var isUserRegistered = false
+                if (usersList != null) {
+                    for (user in usersList!!) {
+                        val userData = user.data
+                        val userPhone = userData?.get("phone") as String
+                        val userPassword = userData["password"] as String
 
-                         val storage = StoragePreference(requireContext())
-                         storage.saveUserId(user.id)
+                        if (userPassword == password && userPhone == phone) {
+                            isUserRegistered = true
 
-                         val intent = Intent(requireContext(), MainActivity::class.java)
-                         startActivity(intent)
-                         requireActivity().finish()
-                     }
-                 }
-             }
+                            val storage = StoragePreference(requireContext())
+                            storage.saveUserId(user.id)
 
-             if (!isUserRegistered) {
-                 (requireActivity() as LoginActivity).navigate(
-                     PasswordFragmentDirections.toDataFragment(
-                         phone,
-                         password
-                     )
-                 )
-             }
-         }
+                            val intent = Intent(requireContext(), MainActivity::class.java)
+                            startActivity(intent)
+                            requireActivity().finish()
+                        }
+                    }
+                }
+
+                if (!isUserRegistered) {
+                    (requireActivity() as LoginActivity).navigate(
+                        PasswordFragmentDirections.toDataFragment(
+                            phone,
+                            password
+                        )
+                    )
+                }
+            }
+        }
     }
+
 }

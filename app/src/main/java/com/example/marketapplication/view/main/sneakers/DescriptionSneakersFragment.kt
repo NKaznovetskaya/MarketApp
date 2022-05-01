@@ -17,19 +17,29 @@ class DescriptionSneakersFragment : BaseFragment<FragmentDescriptionSneakersBind
 
 
     val removeIsPossible by lazy { DescriptionSneakersFragmentArgs.fromBundle(requireArguments()).removeIsPossible }
+    val sneakers by lazy { DescriptionSneakersFragmentArgs.fromBundle(requireArguments()).sneakers }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
         binding.btnDeleteAds.isVisible = removeIsPossible
         binding.clSellerData.isVisible = !removeIsPossible
+
+        binding.tvDescription.text = sneakers.description
+        binding.tvLength.text = sneakers.length.toString()
+        binding.tvWidth.text = sneakers.width.toString()
+        binding.tvNameSneakers.text = sneakers.name
+        binding.tvPrice.text = sneakers.price.toString()
+        binding.tvMaterial.text = sneakers.material
+        binding.tvSizeTitle.text = sneakers.sizeType
+        binding.tvSize.text = sneakers.size.toString()
 
         val galleryAdapter = GalleryAdapter()
         binding.rvGallery.adapter = galleryAdapter
         galleryAdapter.setItems(ObjectsGeneratorUtils.galleryList())
 
     }
+
 
 }
 

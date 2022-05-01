@@ -211,63 +211,62 @@
                 app:layout_constraintStart_toEndOf="@id/imgIconSneakers"
                 app:layout_constraintTop_toBottomOf="@id/tvWidthTitle" />
 
-            <TextView
-                android:id="@+id/tvSizeType"
+            <Spinner
+                android:id="@+id/spSizeType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="10dp"
-                android:text="@string/size"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@id/vLineSize"
-                app:layout_constraintStart_toEndOf="@id/vLineVertical" />
+                app:layout_constraintStart_toEndOf="@id/vLineVertical"
+                tools:listitem="@android:layout/simple_spinner_item"/>
 
-            <TextView
-                android:id="@+id/tvSizeNumber"
+            <Spinner
+                android:id="@+id/spSizeNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="28dp"
                 android:layout_marginBottom="10dp"
-                android:text="39"
-                android:textColor="@color/white"
-                android:textSize="16dp"
                 app:layout_constraintBottom_toTopOf="@id/vLineSize"
-                app:layout_constraintStart_toEndOf="@id/tvSizeSneakers" />
+                app:layout_constraintStart_toEndOf="@id/tvSizeSneakers"
+                tools:listitem="@android:layout/simple_spinner_item"/>
 
-            <TextView
-                android:id="@+id/tvSizeLength"
+            <Spinner
+                android:id="@+id/spSizeLength"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:layout_marginBottom="10dp"
-                android:text="39"
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toTopOf="@id/vLineLong"
-                app:layout_constraintStart_toEndOf="@id/vLineVerticalLong" />
+                app:layout_constraintStart_toEndOf="@id/vLineVerticalLong"
+                tools:listitem="@android:layout/simple_spinner_item"/>
 
-            <TextView
-                android:id="@+id/tvSizeWidth"
+            <Spinner
+                android:id="@+id/spSizeWidth"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
                 android:layout_marginBottom="10dp"
-                android:text="39"
                 android:textColor="@color/white"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toTopOf="@id/vLineWidth"
-                app:layout_constraintStart_toEndOf="@id/vLineVerticalWidth" />
+                app:layout_constraintStart_toEndOf="@id/vLineVerticalWidth"
+                tools:listitem="@android:layout/simple_spinner_item"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilModel"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.App.SpinnerTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
+            app:expandedHintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="20dp"
@@ -276,8 +275,8 @@
             android:hint="@string/model"
             app:prefixTextColor="@color/white">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiEtModel"
+            <AutoCompleteTextView
+                android:id="@+id/spModel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -285,17 +284,20 @@
                 android:focusable="true"
                 android:clickable="true"
                 android:cursorVisible="true"
-                android:backgroundTint="@color/grey_line" />
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/grey_line"
+                tools:listitem="@android:layout/simple_spinner_item"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilMaterial"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.App.SpinnerTextInputLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginStart="16dp"
+            app:expandedHintEnabled="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="18dp"
@@ -304,22 +306,26 @@
             android:hint="@string/material"
             app:prefixTextColor="@color/white">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/tiEtMaterial"
+            <AutoCompleteTextView
+                android:id="@+id/spMaterial"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="18sp"
+                android:spinnerMode="dropdown"
                 android:focusable="true"
                 android:clickable="true"
                 android:cursorVisible="true"
-                android:backgroundTint="@color/grey_line" />
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/grey_line"
+                tools:listitem="@android:layout/simple_spinner_item"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilDescription"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.App.SpinnerTextInputLayout"
+            app:expandedHintEnabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -332,7 +338,7 @@
             android:hint="@string/description"
             app:prefixTextColor="@color/white">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/tiEtDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -341,13 +347,16 @@
                 android:focusable="true"
                 android:clickable="true"
                 android:cursorVisible="true"
-                android:backgroundTint="@color/grey_line" />
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/grey_line"
+                tools:listitem="@android:layout/simple_spinner_item" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/tilPrice"
-            style="@style/Widget.Design.TextInputLayout"
+            style="@style/Widget.App.SpinnerTextInputLayout"
+            app:expandedHintEnabled="false"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -360,7 +369,7 @@
             android:hint="@string/price"
             app:prefixTextColor="@color/white">
 
-            <com.google.android.material.textfield.TextInputEditText
+            <AutoCompleteTextView
                 android:id="@+id/tiEtPrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -369,22 +378,12 @@
                 android:focusable="true"
                 android:clickable="true"
                 android:cursorVisible="true"
+                android:background="@android:color/transparent"
                 android:backgroundTint="@color/grey_line" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/tvValidationError"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:text="@string/validation_error"
-            android:textColor="@color/red_field_error"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tilPrice"
-            android:layout_marginTop="14dp"
-            android:layout_marginBottom="24dp"
-            />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.core.widget.NestedScrollView>

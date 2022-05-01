@@ -13,6 +13,9 @@ import com.example.marketapplication.view.main.MainActivity
 import com.example.marketapplication.view.main.MainNavFragmentDirections
 import com.example.marketapplication.view.main.adapters.sneakers.SneakersAdapter
 import com.example.marketapplication.view.main.bottomsheet.BottomSheetFilterFragment
+import com.example.marketapplication.view.main.sneakers.DescriptionSneakersFragment
+import com.example.marketapplication.view.main.sneakers.DescriptionSneakersFragmentArgs
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -21,16 +24,47 @@ class SneakersFragment: BaseFragment<FragmentSneakersBinding>() {
     override val bindingInflater: (LayoutInflater, ViewGroup?, Boolean) -> FragmentSneakersBinding
         get() = FragmentSneakersBinding::inflate
 
+
     private val bottomSheetDialog = BottomSheetFilterFragment()
+
+    private lateinit var db: FirebaseFirestore
+    private lateinit var sneakersAdapter: SneakersAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val sneakersAdapter = SneakersAdapter()
+        sneakersAdapter = SneakersAdapter()
         binding.rvSneakers.adapter = sneakersAdapter
+        db = Firebase.firestore
 
-        val db = Firebase.firestore
+        sneakersAdapter.itemClickListener = { sneakers ->
+            (requireActivity() as MainActivity).navigate(MainNavFragmentDirections.toDescriptionSneakersFragment(removeIsPossible =  false, sneakers = sneakers))
+        }
 
+        getSneakers()
+
+        binding.imgFilter.setOnClickListener{
+            showBottomSheetDialog()
+        }
+
+        bottomSheetDialog.filterCallback = { sneakersFilter ->
+            val newSneakersList = sneakersAdapter.getItems().filter { sneakers ->
+                sneakersFilter.name == sneakers.name && sneakersFilter.material == sneakers.material &&
+                        sneakersFilter.size == sneakers.size && sneakersFilter.priceFrom == sneakers.price &&
+                        sneakersFilter.priceTo == sneakers.price
+
+            }
+            sneakersAdapter.clearItems()
+            sneakersAdapter.setItems(newSneakersList)
+        }
+
+    }
+
+    private fun showBottomSheetDialog() {
+        bottomSheetDialog.show(parentFragmentManager, BottomSheetFilterFragment.TAG)
+    }
+
+    private fun getSneakers() {
         db.collection("sneakers")
             .get()
             .addOnSuccessListener {
@@ -56,20 +90,5 @@ class SneakersFragment: BaseFragment<FragmentSneakersBinding>() {
             .addOnFailureListener { exception ->
                 Log.w("SneakersFragment", "Error getting documents.", exception)
             }
-
-        sneakersAdapter.itemClickListener = {
-            (requireActivity() as MainActivity).navigate(MainNavFragmentDirections.toDescriptionSneakersFragment(false))
-        }
-
-        binding.imgFilter.setOnClickListener{
-            showBottomSheetDialog()
-        }
-
     }
-
-    private fun showBottomSheetDialog() {
-        bottomSheetDialog.show(parentFragmentManager, BottomSheetFilterFragment.TAG)
-    }
-
-
 }

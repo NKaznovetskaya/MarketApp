@@ -9,7 +9,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilModel"
-        style="@style/Widget.Design.TextInputLayout"
+        style="@style/Widget.App.SpinnerTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -23,20 +23,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:prefixTextColor="@color/white">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiEtModel"
+        <AutoCompleteTextView
+            android:id="@+id/ctvModel"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/grey_line"
-            android:clickable="true"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            android:backgroundTint="@color/grey_line"
+            android:background="@android:color/transparent"
+            tools:listitem="@android:layout/simple_spinner_item"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilMaterial"
-        style="@style/Widget.Design.TextInputLayout"
+        style="@style/Widget.App.SpinnerTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -50,20 +52,23 @@
         app:layout_constraintTop_toBottomOf="@id/tilModel"
         app:prefixTextColor="@color/white">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiEtMaterial"
+        <AutoCompleteTextView
+            android:id="@+id/spMaterial"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/grey_line"
+            android:background="@android:color/transparent"
             android:clickable="true"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            tools:listitem="@android:layout/simple_spinner_item"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilSizeFilter"
-        style="@style/Widget.Design.TextInputLayout"
+        style="@style/Widget.App.SpinnerTextInputLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -77,14 +82,17 @@
         app:layout_constraintTop_toBottomOf="@id/tilMaterial"
         app:prefixTextColor="@color/white">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/tiEtSizeFilter"
+        <AutoCompleteTextView
+            android:id="@+id/spSizeFilter"
+            android:textAlignment="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
             android:backgroundTint="@color/grey_line"
             android:clickable="true"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            tools:listitem="@android:layout/simple_spinner_item"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -106,11 +114,33 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tiEtPrice"
-            android:layout_width="match_parent"
+            android:layout_width="98dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/grey_line"
             android:clickable="true"
-            android:text=""
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilPrice2"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:expandedHintEnabled="false"
+        app:layout_constraintStart_toEndOf="@id/tilPrice"
+        app:layout_constraintTop_toBottomOf="@id/tilSizeFilter"
+        app:prefixTextColor="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tiEtPrice2"
+            android:layout_width="98dp"
+            android:layout_marginStart="135dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/grey_line"
+            android:clickable="true"
             android:textColor="@color/white"
             android:textSize="18sp" />
 

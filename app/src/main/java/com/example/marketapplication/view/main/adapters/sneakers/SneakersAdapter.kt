@@ -10,11 +10,15 @@ import com.example.marketapplication.domain.model.Sneakers
 class SneakersAdapter : ListAdapter<Sneakers, SneakersViewHolder>(SneakersDiffUtil()) {
 
     private var items = mutableListOf<Sneakers>()
-    var itemClickListener: (() -> (Unit))? = null
+    var itemClickListener: ((Sneakers) -> (Unit))? = null
 
     fun setItems(itemsList: List<Sneakers>) {
         items.addAll(itemsList)
         notifyDataSetChanged()
+    }
+
+    fun getItems(): List<Sneakers> {
+        return items
     }
 
     fun clearItems() {
@@ -24,7 +28,7 @@ class SneakersAdapter : ListAdapter<Sneakers, SneakersViewHolder>(SneakersDiffUt
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SneakersViewHolder {
         return SneakersViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.item_sneakers, parent, false)
+            LayoutInflater.from(parent.context).inflate(R.layout.item_sneakers, parent, false )
         )
     }
 

@@ -15,13 +15,40 @@ class VerificationFragment : BaseFragment<FragmentVerificationBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnVerification.setOnClickListener {
-            val phone = binding.tilPhoneNumber.prefixText.toString() + binding.etNumber.text.toString()
-            (requireActivity() as LoginActivity).navigate(VerificationFragmentDirections.toPasswordFragment(phone))
+
+
+
+      binding.btnVerification.setOnClickListener {
+
+          val isPhoneValid = validatePhone()
+
+          if (isPhoneValid) {
+              val phone =
+                  binding.tilPhoneNumber.prefixText.toString() + binding.etNumber.text.toString()
+              (requireActivity() as LoginActivity).navigate(
+                  VerificationFragmentDirections.toPasswordFragment(
+                      phone
+                  )
+              )
+          }
+
         }
+
+    }
+
+    private fun validatePhone(): Boolean {
+        if (binding.etNumber.text.toString().trim().isEmpty() || binding.etNumber.length() < 9) {
+            binding.tilPhoneNumber.error = "Номер введено невірно"
+            binding.etNumber.requestFocus()
+            return false
+        } else {
+            binding.tilPhoneNumber.isErrorEnabled = false
+        }
+        return true
+    }
+
 
     }
 
 
 
-}
