@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
 import com.example.marketapplication.databinding.FragmentDataBinding
+import com.example.marketapplication.domain.storage.StoragePreference
 import com.example.marketapplication.utils.ValidationUtils
 import com.example.marketapplication.view.base.BaseFragment
 import com.example.marketapplication.view.main.MainActivity
@@ -52,6 +53,9 @@ class DataFragment : BaseFragment<FragmentDataBinding>() {
                             "CreateUser",
                             "DocumentSnapshot added with ID: ${documentReference.id}"
                         )
+
+                        val storage = StoragePreference(requireContext())
+                        storage.saveUserId(documentReference.id)
 
                         val intent = Intent(requireContext(), MainActivity::class.java)
                         startActivity(intent)

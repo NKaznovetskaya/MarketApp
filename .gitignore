@@ -30,3 +30,6 @@
 .idea/.name
 .idea/navEditor.xml
 .idea/assetWizardSettings.xml
+app/release/app-release.apk
+app/release/output-metadata.json
+build/kotlin/sessions/kotlin-compiler-3780465078772500679.salive
